@@ -1,0 +1,24 @@
+<h1>Build In Pipes</h1>
+<h2>{{welcome | uppercase}}</h2>
+<h2>{{currency | currency:'INR' }}</h2>
+
+<h1>Custom Pipes</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Title</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let student of students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name | titleCase: student.gender }}</td>
+          <td>{{ student.gender }}</td>
+          <td>{{ student.gender === 'Male' ? 'Mr.' : 'Miss' }}</td>
+      </tr>
+  </tbody>
+</table>
